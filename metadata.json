@@ -1,0 +1,5 @@
+{
+  "name": "Zorvyn Fintrack Dashboard",
+  "description": "A high-end, neumorphic financial dashboard for tracking transactions, spending patterns, and wealth growth with role-based access control.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-surface: #E0E5EC;
+  --color-on-surface: #31456A;
+  --color-on-surface-variant: #7B8FAB;
+  --color-primary-accent: #6C63FF;
+  --color-income: #4CAF89;
+  --color-expense: #E07C7C;
+
+  /* Dark Mode Colors */
+  --color-dark-surface: #1E2A3A;
+  --color-dark-shadow-light: #243244;
+  --color-dark-shadow-dark: #18222F;
+  --color-dark-on-surface: #E0E5EC;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-dark-surface text-dark-on-surface;
+  }
+}
+
+@utility shadow-raised {
+  box-shadow: 6px 6px 12px #b8bec7, -6px -6px 12px #ffffff;
+  @variant dark {
+    box-shadow: 6px 6px 12px #18222F, -6px -6px 12px #243244;
+  }
+}
+
+@utility shadow-inset {
+  box-shadow: inset 6px 6px 12px #b8bec7, inset -6px -6px 12px #ffffff;
+  @variant dark {
+    box-shadow: inset 6px 6px 12px #18222F, inset -6px -6px 12px #243244;
+  }
+}
+
+@utility shadow-raised-sm {
+  box-shadow: 3px 3px 6px #b8bec7, -3px -3px 6px #ffffff;
+  @variant dark {
+    box-shadow: 3px 3px 6px #18222F, -3px -3px 6px #243244;
+  }
+}
+
+@utility shadow-inset-sm {
+  box-shadow: inset 3px 3px 6px #b8bec7, inset -3px -3px 6px #ffffff;
+  @variant dark {
+    box-shadow: inset 3px 3px 6px #18222F, inset -3px -3px 6px #243244;
+  }
+}
+
+@utility neumorphic-active {
+  &:active {
+    @apply shadow-inset scale-[0.98] transition-all duration-100;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-on-surface-variant/20 rounded-full hover:bg-on-surface-variant/40 transition-colors;
+}
