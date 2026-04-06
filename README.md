@@ -25,7 +25,7 @@ All styling relies strictly on utility classes and CSS variables without using a
   - Complete Dark/Light mode support with distinct shadow configurations for each to ensure high legibility.
   - Granular Access Control (Admin vs Viewer) that disables edits to records.
 
-## etup Instructions
+## Setup Instructions
 
 1. **Clone the repository and install dependencies**
    Make sure you are running a recent version of Node (v20+ recommended).
